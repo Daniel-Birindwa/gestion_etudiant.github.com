@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Étudiants</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="app-container">
+            <header>
+                <h1>Gestion des Étudiants</h1>
+            </header>
+
+            <main>
+                <section class="registration">
+                    <h2>Inscription</h2>
+                    <form id="registration-form">
+                        <div class="form-group">
+                            <label for="prenom">Prénom:</label>
+                            <input type="text" id="prenom" name="prenom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nom">Nom:</label>
+                            <input type="text" id="nom" name="nom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="motdepasse">Mot de passe:</label>
+                            <input type="password" id="motdepasse" name="motdepasse" required>
+                        </div>
+                        <button type="submit">S'inscrire</button>
+                    </form>
+                    <p>Déjà inscrit ? <a href="#login" onclick="showLogin()">Connectez-vous ici</a>.</p>
+                </section>
+
+                <section class="login" style="display: none;">
+                    <h2>Connexion</h2>
+                    <form id="login-form">
+                        <div class="form-group">
+                            <label for="login-email">Email:</label>
+                            <input type="email" id="login-email" name="login-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="login-motdepasse">Mot de passe:</label>
+                            <input type="password" id="login-motdepasse" name="login-motdepasse" required>
+                        </div>
+                        <button type="submit">Se connecter</button>
+                    </form>
+                    <p>Pas encore inscrit ? <a href="#registration" onclick="showRegistration()">Inscrivez-vous ici</a>.</p>
+                </section>
+
+                <section class="student-management" style="display: none;">
+                    <h2>Ajouter un Étudiant</h2>
+                    <form id="student-form">
+                        <div class="form-group">
+                            <label for="student-prenom">Prénom:</label>
+                            <input type="text" id="student-prenom" name="student-prenom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="student-nom">Nom:</label>
+                            <input type="text" id="student-nom" name="student-nom" required>
+                        </div>
+                        <button type="submit">Ajouter Étudiant</button>
+                    </form>
+
+                    <h2>Historique des Étudiants</h2>
+                    <table id="student-table">
+                        <thead>
+                            <tr>
+                                <th>Prénom</th>
+                                <th>Nom</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </section>
+            </main>
+
+            <footer>
+                <p>&copy; 2024 Daniel KMT. Tous droits réservés.</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
